@@ -11,7 +11,7 @@ const Footer = () => {
               <div className="w-10 h-16 flex items-center justify-center">
                 <img src="\logo.png" alt="" />
               </div>
-              <span className="bg-gradient-to-r from-pink-bright to-pink-deep bg-clip-text text-transparent">
+              <span className="text-xl font-bold bg-gradient-to-r from-pink-bright to-pink-deep bg-clip-text bg-gradient-to-r from-pink-bright to-pink-deep bg-clip-text text-transparent">
                 euroWiskids
               </span>
             </div>

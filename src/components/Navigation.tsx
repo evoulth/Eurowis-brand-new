@@ -27,7 +27,7 @@ const Navigation = () => {
             <div className="w-12 h-32  flex items-center justify-center">
               <img src="/logo.png" alt="" />
             </div>
-            <span className="text-xl font-bold bg-gradient-to-r from-pink-bright to-pink-deep bg-clip-text ">
+            <span className="text-xl font-bold bg-gradient-to-r from-pink-bright to-pink-deep bg-clip-text bg-gradient-to-r from-pink-bright to-pink-deep bg-clip-text text-transparent">
               euroWiskids
             </span>
           </Link>
