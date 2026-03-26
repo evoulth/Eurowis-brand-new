@@ -15,7 +15,7 @@ const Contact = () => {
     {
       icon: Phone,
       title: "Phone",
-      content: "+91 98765 43210",
+      content: "+91 9087225486",
     },
     {
       icon: Mail,
@@ -45,7 +45,7 @@ const Contact = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           {/* Contact Information */}
           <div className="space-y-8">
-                <h2 className="text-3xl font-bold mb-8 bg-gradient-to-r from-pink-bright to-pink-deep bg-clip-text text-transparent">Get in Touch</h2>
+            <h2 className="text-3xl font-bold mb-8 bg-gradient-to-r from-pink-bright to-pink-deep bg-clip-text text-transparent">Get in Touch</h2>
 
             <div className="space-y-6">
               {contactInfo.map((info, index) => (
@@ -118,7 +118,7 @@ const Contact = () => {
                       <label className="text-sm font-medium text-foreground block mb-2">
                         Phone Number *
                       </label>
-                      <Input placeholder="+91 98765 43210" />
+                      <Input placeholder="+91 9087225486" />
                     </div>
                   </div>
 

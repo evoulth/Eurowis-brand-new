@@ -75,12 +75,9 @@ const Admission = () => {
   const requiredDocuments = [
     "Child's Birth Certificate",
     "Recent Passport-size Photographs (4 copies)",
-    "Transfer Certificate (if applicable)",
-    "Medical Certificate/Immunization Records",
-    "Parent/Guardian ID Proof",
-    "Address Proof",
-    "Previous School Records (if applicable)",
-  ];
+    "Photograph of parents",
+    "Parent/Guardian Aadhar Card",
+];
 
   const feeStructure = [
     { level: "Level 1 (Age 2-3)", monthly: "₹8,000", annual: "₹90,000", admission: "₹25,000" },
@@ -262,7 +259,7 @@ const Admission = () => {
                         <div>
                           <label className="text-sm font-medium block mb-2">Phone Number *</label>
                           <Input
-                            placeholder="+91 98765 43210"
+                            placeholder="+91 9087225486"
                             value={formData.phone}
                             onChange={(e) => handleInputChange("phone", e.target.value)}
                             required
@@ -271,7 +268,7 @@ const Admission = () => {
                         <div>
                           <label className="text-sm font-medium block mb-2">Alternate Phone</label>
                           <Input
-                            placeholder="+91 98765 43210"
+                            placeholder="+91 9087225486"
                             value={formData.alternatePhone}
                             onChange={(e) => handleInputChange("alternatePhone", e.target.value)}
                           />
@@ -307,7 +304,7 @@ const Admission = () => {
                         <div>
                           <label className="text-sm font-medium block mb-2">Emergency Phone Number *</label>
                           <Input
-                            placeholder="+91 98765 43210"
+                            placeholder="+91 9087225486"
                             value={formData.emergencyPhone}
                             onChange={(e) => handleInputChange("emergencyPhone", e.target.value)}
                             required
@@ -422,7 +419,7 @@ const Admission = () => {
                   <div className="space-y-3 text-sm">
                     <div className="flex items-center space-x-2">
                       <Phone className="w-4 h-4 text-primary" />
-                      <span>+91 98765 43210</span>
+                      <span>+91 9087225486</span>
                     </div>
                     <div className="flex items-center space-x-2">
                       <Mail className="w-4 h-4 text-primary" />
@@ -430,7 +427,12 @@ const Admission = () => {
                     </div>
                     <div className="flex items-start space-x-2">
                       <Clock className="w-4 h-4 text-primary mt-0.5" />
-                      <span>Mon-Fri: 9:00 AM - 5:00 PM</span>
+                      <span>Mon-Fri: 08:30 AM - 06:00 PM</span>
+                      
+                    </div>
+                    <div className="flex items-start space-x-2">
+                      <Clock className="w-4 h-4 text-primary mt-0.5" />
+                      <span>Sat: 09:00 AM - 04:00 PM</span>
                     </div>
                   </div>
                   <Button size="sm" className="w-full">
