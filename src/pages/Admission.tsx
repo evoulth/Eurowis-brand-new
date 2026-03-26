@@ -158,7 +158,7 @@ const Admission = () => {
                 <CardHeader>
                   <CardTitle className="text-2xl flex items-center gap-2">
                     <FileText className="w-6 h-6 text-primary" />
-                    Admission Application Form
+                    Admission Enquiry Form
                   </CardTitle>
                 </CardHeader>
                 <CardContent>

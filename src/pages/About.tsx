@@ -46,7 +46,7 @@ const About = () => {
 
   const teachers = [
     {
-      name: "CHRISTINA MARY EMERALD",
+      name: "Deepa",
       role: "Early Years Centre Director | Parent–Child Development Specialist & Early Years Program Designer",
       image: deepa,
     },
