@@ -77,7 +77,7 @@ const Admission = () => {
     "Recent Passport-size Photographs (4 copies)",
     "Photograph of parents",
     "Parent/Guardian Aadhar Card",
-];
+  ];
 
   const feeStructure = [
     { level: "Level 1 (Age 2-3)", monthly: "₹8,000", annual: "₹90,000", admission: "₹25,000" },
@@ -107,13 +107,28 @@ const Admission = () => {
     setFormData(prev => ({ ...prev, [field]: value }));
   };
 
+  const isFormComplete =
+    formData.childName.trim() !== "" &&
+    formData.dateOfBirth !== "" &&
+    formData.gender !== "" &&
+    formData.level !== "" &&
+    formData.parentName.trim() !== "" &&
+    formData.relation !== "" &&
+    formData.email.trim() !== "" &&
+    formData.phone.trim() !== "" &&
+    formData.address.trim() !== "" &&
+    formData.emergencyContact.trim() !== "" &&
+    formData.emergencyPhone.trim() !== "" &&
+    formData.agreeTerms &&
+    formData.agreePrivacy;
+
   return (
     <div className="min-h-screen py-20">
       <div className="container mx-auto px-4">
         {/* Hero Section */}
         <ScrollAnimation className="text-center mb-16">
           <h1 className="text-4xl md:text-5xl font-bold mb-6">
-            Admission <span className="text-primary">Form</span>
+            Admission <span className="bg-gradient-to-r from-pink-bright to-pink-deep bg-clip-text text-transparent">Form</span>
           </h1>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
             Join the euroWiskids family! Start your child's educational journey with us by completing the admission process.
@@ -123,7 +138,7 @@ const Admission = () => {
         {/* Admission Process */}
         <section className="mb-20">
           <h2 className="text-3xl font-bold text-center mb-12">
-            Admission <span className="text-primary">Process</span>
+            Admission <span className="bg-gradient-to-r from-pink-bright to-pink-deep bg-clip-text text-transparent">Process</span>
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
             {admissionProcess.map((process, index) => (
@@ -154,7 +169,7 @@ const Admission = () => {
               <Card className="shadow-card">
                 <CardHeader>
                   <CardTitle className="text-2xl flex items-center gap-2">
-                    <FileText className="w-6 h-6 text-primary" />
+                    <FileText className="w-6 h-6 bg-gradient-to-r from-pink-bright to-pink-deep bg-clip-text text-transparent" />
                     Admission Enquiry Form
                   </CardTitle>
                 </CardHeader>
@@ -163,7 +178,7 @@ const Admission = () => {
                     {/* Child Information */}
                     <div>
                       <h3 className="text-lg font-semibold mb-4 flex items-center gap-2">
-                        <User className="w-5 h-5 text-primary" />
+                        <User className="w-5 h-5 bg-gradient-to-r from-pink-bright to-pink-deep bg-clip-text text-transparent" />
                         Child Information
                       </h3>
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -219,7 +234,7 @@ const Admission = () => {
                     {/* Parent/Guardian Information */}
                     <div>
                       <h3 className="text-lg font-semibold mb-4 flex items-center gap-2">
-                        <Users className="w-5 h-5 text-primary" />
+                        <Users className="w-5 h-5 bg-gradient-to-r from-pink-bright to-pink-deep bg-clip-text text-transparent" />
                         Parent/Guardian Information
                       </h3>
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -288,7 +303,7 @@ const Admission = () => {
                     {/* Emergency Contact */}
                     <div>
                       <h3 className="text-lg font-semibold mb-4 flex items-center gap-2">
-                        <Phone className="w-5 h-5 text-primary" />
+                        <Phone className="w-5 h-5 bg-gradient-to-r from-pink-bright to-pink-deep bg-clip-text text-transparent" />
                         Emergency Contact
                       </h3>
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -312,39 +327,6 @@ const Admission = () => {
                         </div>
                       </div>
                     </div>
-
-                    {/* Additional Information */}
-                    <div>
-                      <h3 className="text-lg font-semibold mb-4">Additional Information</h3>
-                      <div className="space-y-4">
-
-                        <div>
-                          <label className="text-sm font-medium block mb-2">Medical Conditions</label>
-                          <Textarea
-                            placeholder="Any medical conditions we should be aware of"
-                            value={formData.medicalConditions}
-                            onChange={(e) => handleInputChange("medicalConditions", e.target.value)}
-                          />
-                        </div>
-                        <div>
-                          <label className="text-sm font-medium block mb-2">Allergies</label>
-                          <Textarea
-                            placeholder="Any allergies (food, environmental, etc.)"
-                            value={formData.allergies}
-                            onChange={(e) => handleInputChange("allergies", e.target.value)}
-                          />
-                        </div>
-                        <div>
-                          <label className="text-sm font-medium block mb-2">Special Needs</label>
-                          <Textarea
-                            placeholder="Any special needs or requirements"
-                            value={formData.specialNeeds}
-                            onChange={(e) => handleInputChange("specialNeeds", e.target.value)}
-                          />
-                        </div>
-                      </div>
-                    </div>
-
                     {/* Terms and Conditions */}
                     <div className="space-y-4">
                       <div className="flex items-start space-x-2">
@@ -354,7 +336,7 @@ const Admission = () => {
                           onCheckedChange={(checked) => handleInputChange("agreeTerms", !!checked)}
                         />
                         <label htmlFor="terms" className="text-sm text-muted-foreground">
-                          I agree to the <Button variant="link" className="p-0 h-auto text-primary">terms and conditions</Button> of euroWiskids Preschool
+                          I agree to the <Button variant="link" className="p-0 h-auto bg-gradient-to-r from-pink-bright to-pink-deep bg-clip-text text-transparent">terms and conditions</Button> of euroWiskids Preschool
                         </label>
                       </div>
                       <div className="flex items-start space-x-2">
@@ -364,14 +346,25 @@ const Admission = () => {
                           onCheckedChange={(checked) => handleInputChange("agreePrivacy", !!checked)}
                         />
                         <label htmlFor="privacy" className="text-sm text-muted-foreground">
-                          I agree to the <Button variant="link" className="p-0 h-auto text-primary">privacy policy</Button> and consent to data processing
+                          I agree to the <Button variant="link" className="p-0 h-auto bg-gradient-to-r from-pink-bright to-pink-deep bg-clip-text text-transparent">privacy policy</Button> and consent to data processing
                         </label>
                       </div>
                     </div>
 
-                    <Button type="submit" size="lg" className="w-full">
+                    <button
+                      type="submit"
+                      disabled={!isFormComplete}
+                      style={{
+                        background: isFormComplete
+                          ? "linear-gradient(to right, #ec4899, #8b5cf6)"
+                          : "#d1d5db",
+                        cursor: isFormComplete ? "pointer" : "not-allowed",
+                      }}
+                      className={`w-full py-3 px-6 text-white font-semibold text-base rounded-md transition-all duration-300 ${isFormComplete ? "hover:scale-[1.02] hover:shadow-lg hover:brightness-110" : ""
+                        }`}
+                    >
                       Submit Admission Application
-                    </Button>
+                    </button>
                   </form>
                 </CardContent>
               </Card>
@@ -386,7 +379,7 @@ const Admission = () => {
               <Card className="shadow-card">
                 <CardHeader>
                   <CardTitle className="flex items-center gap-2">
-                    <Upload className="w-5 h-5 text-primary" />
+                    <Upload className="w-5 h-5 bg-gradient-to-r from-pink-bright to-pink-deep bg-clip-text text-transparent" />
                     Required Documents
                   </CardTitle>
                 </CardHeader>
@@ -394,7 +387,7 @@ const Admission = () => {
                   <ul className="space-y-3">
                     {requiredDocuments.map((doc, index) => (
                       <li key={index} className="flex items-start space-x-2">
-                        <CheckCircle2 className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
+                        <CheckCircle2 className="w-4 h-4 bg-gradient-to-r from-pink-bright to-pink-deep bg-clip-text text-transparent mt-0.5 flex-shrink-0" />
                         <span className="text-sm text-muted-foreground">{doc}</span>
                       </li>
                     ))}
@@ -418,20 +411,20 @@ const Admission = () => {
                   </p>
                   <div className="space-y-3 text-sm">
                     <div className="flex items-center space-x-2">
-                      <Phone className="w-4 h-4 text-primary" />
+                      <Phone className="w-4 h-4 bg-gradient-to-r from-pink-bright to-pink-deep bg-clip-text text-transparent" />
                       <span>+91 9087225486</span>
                     </div>
                     <div className="flex items-center space-x-2">
-                      <Mail className="w-4 h-4 text-primary" />
+                      <Mail className="w-4 h-4 bg-gradient-to-r from-pink-bright to-pink-deep bg-clip-text text-transparent" />
                       <span>info@eurowiskids.com</span>
                     </div>
                     <div className="flex items-start space-x-2">
-                      <Clock className="w-4 h-4 text-primary mt-0.5" />
+                      <Clock className="w-4 h-4 bg-gradient-to-r from-pink-bright to-pink-deep bg-clip-text text-transparent mt-0.5" />
                       <span>Mon-Fri: 08:30 AM - 06:00 PM</span>
-                      
+
                     </div>
                     <div className="flex items-start space-x-2">
-                      <Clock className="w-4 h-4 text-primary mt-0.5" />
+                      <Clock className="w-4 h-4 bg-gradient-to-r from-pink-bright to-pink-deep bg-clip-text text-transparent mt-0.5" />
                       <span>Sat: 09:00 AM - 04:00 PM</span>
                     </div>
                   </div>

@@ -87,7 +87,7 @@ const Albums = () => {
 
                 <CardHeader className="pb-3">
                   <div className="flex items-start justify-between">
-                    <CardTitle className="text-lg group-hover:text-primary transition-colors cursor-pointer" onClick={() => navigate(album.link)}>
+                    <CardTitle className="text-lg group-hover:bg-gradient-to-r from-pink-bright to-pink-deep bg-clip-text text-transparent transition-colors cursor-pointer" onClick={() => navigate(album.link)}>
                       {album.title}
                     </CardTitle>
                   </div>

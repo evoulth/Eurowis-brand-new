@@ -8,8 +8,8 @@ const Footer = () => {
           {/* Logo and Description */}
           <div className="space-y-4">
             <div className="flex items-center space-x-2">
-              <div className="w-10 h-16 flex items-center justify-center">
-                <img src="\logo.png" alt="" />
+              <div className="w-12 h-12 rounded-full overflow-hidden bg-white flex items-center justify-center flex-shrink-0">
+                <img src="\logo.png" alt="euroWiskids logo" className="w-full h-full object-cover" />
               </div>
               <span className="text-xl font-bold bg-gradient-to-r from-pink-bright to-pink-deep bg-clip-text bg-gradient-to-r from-pink-bright to-pink-deep bg-clip-text text-transparent">
                 euroWiskids

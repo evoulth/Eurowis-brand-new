@@ -10,7 +10,8 @@ import {
   Heart,
   Rocket,
 } from "lucide-react";
-import teamPhoto from "@/assets/general/team-photo.jpg";
+import facultyTeam from "@/assets/general/Faculty-team.jpg";
+import caregiversTeam from "@/assets/general/Caregivers-team.jpg";
 import ScrollAnimation from "@/components/ScrollAnimation";
 
 // Faculty Images
@@ -35,6 +36,8 @@ import punitha from "@/assets/faculty/Punitha.jpg";
 import sivaShankari from "@/assets/faculty/Sivasankari.jpg";
 import sowmiya from "@/assets/faculty/Sowmiya.jpg";
 import vrindha from "@/assets/faculty/Vrindha.jpg";
+import caregiver1 from "@/assets/faculty/caregiver1.jpg";
+import caregiver2 from "@/assets/faculty/caregiver2.jpg";
 
 const About = () => {
   const stats = [
@@ -46,14 +49,14 @@ const About = () => {
 
   const teachers = [
     {
-      name: "Deepa",
-      role: "Early Years Centre Director | Parent–Child Development Specialist & Early Years Program Designer",
-      image: deepa,
-    },
-    {
       name: "SHARON SANGEETHA",
       role: "Centre Head, Operations Lead & Early Childhood Program Specialist",
       image: sharonSangeetha,
+    },
+    {
+      name: "Deepa",
+      role: "Expert in Early Childhood Phonics Instruction",
+      image: deepa,
     },
     {
       name: "VINOTHINI",
@@ -94,15 +97,15 @@ const About = () => {
       name: "SANGEETHA",
       role: "Honorary Early Childhood Educator – Child Connection & Creative Dance Specialist",
       image: sangeetha,
-    },
-  ];
-
-  const caregivers = [
-    {
+    }, {
       name: "LAKSHMIPRIYA",
       role: "Early Childhood Art-Integrated Program Facilitator",
       image: lakshmiPriya,
     },
+  ];
+
+  const caregivers = [
+   
     {
       name: "BHAVANI",
       role: "Caregiver",
@@ -152,6 +155,16 @@ const About = () => {
       name: "VRINDHA",
       role: "Caregiver",
       image: vrindha,
+    },
+    {
+      name: "CAREGIVER1",
+      role: "Caregiver",
+      image: caregiver1,
+    },
+    {
+      name: "CAREGIVER2",
+      role: "Caregiver",
+      image: caregiver2,
     },
   ];
 
@@ -284,7 +297,7 @@ const About = () => {
           </div>
 
           <div className="mt-10 space-y-3">
-            <p className="italic text-primary text-lg">
+            <p className="bg-gradient-to-r from-pink-bright to-pink-deep bg-clip-text text-transparent">
               “A preschool where childhood is celebrated and God’s love is lived.”
             </p>
             <p className="font-bold text-xl">
@@ -367,7 +380,7 @@ const About = () => {
 
                   <CardContent>
                     <h4 className="font-semibold mb-4 flex items-center gap-2 bg-gradient-to-r from-pink-bright to-pink-deep bg-clip-text text-transparent">
-                      <BookOpen className="w-4 h-4 text-primary" />
+                      <BookOpen className="w-4 h-4 bg-gradient-to-r from-pink-bright to-pink-deep bg-clip-text text-transparent" />
                       Focus Areas
                     </h4>
 
@@ -396,11 +409,24 @@ const About = () => {
             Meet Our Expert Team
           </h2>
 
-          <img
-            src={teamPhoto}
-            alt="EuroWiskids Team"
-            className="w-full max-w-4xl mx-auto rounded-2xl"
-          />
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
+            <div className="flex flex-col items-center gap-3">
+              <img
+                src={facultyTeam}
+                alt="EuroWiskids Faculty Team"
+                className="w-full rounded-2xl"
+              />
+              <p className="text-center font-semibold text-muted-foreground bg-gradient-to-r from-pink-bright to-pink-deep bg-clip-text text-transparent">Faculty Team</p>
+            </div>
+            <div className="flex flex-col items-center gap-3">
+              <img
+                src={caregiversTeam}
+                alt="EuroWiskids Caregivers Team"
+                className="w-full rounded-2xl"
+              />
+              <p className="text-center font-semibold text-muted-foreground bg-gradient-to-r from-pink-bright to-pink-deep bg-clip-text text-transparent">Caregivers Team</p>
+            </div>
+          </div>
         </ScrollAnimation>
 
         {/* EDUCATORS SECTION */}

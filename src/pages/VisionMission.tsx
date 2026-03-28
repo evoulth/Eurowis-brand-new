@@ -101,7 +101,7 @@ const VisionMission = () => {
         <section className="mb-20">
           <ScrollAnimation className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              Our Core <span className="text-primary">Values</span>
+              Our Core <span className="bg-gradient-to-r from-pink-bright to-pink-deep bg-clip-text text-transparent">Values</span>
             </h2>
             <p className="text-xl text-muted-foreground">
               The fundamental principles that guide everything we do
@@ -170,7 +170,7 @@ const VisionMission = () => {
                 <p className="text-foreground">
                   We embrace a holistic approach to education that recognizes the importance of developing the whole child - intellectually, emotionally, socially, physically, and creatively. Through play-based learning, hands-on experiences, and meaningful interactions, we help children develop the skills, knowledge, and confidence they need to succeed in school and in life.
                 </p>
-                <p className="text-primary font-semibold italic text-xl">
+                <p className="bg-gradient-to-r from-pink-bright to-pink-deep bg-clip-text text-transparent font-semibold italic text-xl">
                   "Every child deserves to be nurtured, challenged, and celebrated for who they are and who they can become."
                 </p>
               </div>
