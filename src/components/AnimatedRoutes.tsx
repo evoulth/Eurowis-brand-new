@@ -10,6 +10,7 @@ import Admission from "../pages/Admission";
 import ClassroomGallery from "../pages/ClassroomGallery";
 import ActivitiesGallery from "../pages/ActivitiesGallery";
 import EnactPlayGallery from "../pages/EnactPlayGallery";
+import MarinaMallGallery from "../pages/MarinaMallGallery";
 import NotFound from "../pages/NotFound";
 
 const PageWrapper = ({ children }: { children: React.ReactNode }) => (
@@ -37,6 +38,7 @@ const AnimatedRoutes = () => {
                 <Route path="/albums/classrooms" element={<PageWrapper><ClassroomGallery /></PageWrapper>} />
                 <Route path="/albums/activities" element={<PageWrapper><ActivitiesGallery /></PageWrapper>} />
                 <Route path="/albums/enact-play" element={<PageWrapper><EnactPlayGallery /></PageWrapper>} />
+                <Route path="/albums/marina-mall" element={<PageWrapper><MarinaMallGallery /></PageWrapper>} />
                 <Route path="/admission" element={<PageWrapper><Admission /></PageWrapper>} />
                 <Route path="*" element={<PageWrapper><NotFound /></PageWrapper>} />
             </Routes>

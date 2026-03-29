@@ -8,6 +8,7 @@ import classroomImg from "@/assets/classrooms/class-room1.jpg";
 
 import activityImg from "@/assets/activities/Animal-Safari.jpg";
 import enactPlayImg from "@/assets/enact-play/enact-play2.jpeg";
+import marinaMallImg from "@/assets/activities/merinamall-activity1.jpg";
 
 const Albums = () => {
   const navigate = useNavigate();
@@ -39,6 +40,15 @@ const Albums = () => {
       thumbnail: enactPlayImg,
       description: "A beautiful display of our children engaging in imaginative and creative play sessions.",
       link: "/albums/enact-play"
+    },
+    {
+      id: 4,
+      title: "Christmas Day Celebration on the Chennai Marina Mall",
+      date: "2024",
+      count: 5,
+      thumbnail: marinaMallImg,
+      description: "Joyful moments from our Christmas Day celebration at the Chennai Marina Mall.",
+      link: "/albums/marina-mall"
     }
   ];
 
@@ -59,50 +69,52 @@ const Albums = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {albums.map((album, index) => (
             <ScrollAnimation key={album.id} delay={index * 0.1}>
-              <Card className="group shadow-card hover:shadow-hover transition-all duration-300 hover:-translate-y-2 overflow-hidden h-full">
-                {/* Album Thumbnail */}
-                <div className="relative overflow-hidden cursor-pointer" onClick={() => navigate(album.link)}>
-                  <img
-                    src={album.thumbnail}
-                    alt={album.title}
-                    className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
-                  />
+              <div className="group relative rounded-2xl p-[2px] bg-transparent hover:bg-gradient-to-br hover:from-pink-bright hover:to-blue-deep transition-all duration-500">
+                <Card className="rounded-2xl overflow-hidden h-full shadow-card group-hover:shadow-hover transition-all duration-500">
+                  {/* Album Thumbnail */}
+                  <div className="relative overflow-hidden cursor-pointer" onClick={() => navigate(album.link)}>
+                    <img
+                      src={album.thumbnail}
+                      alt={album.title}
+                      className="w-full h-56 object-cover transition-transform duration-500 group-hover:scale-110"
+                    />
 
-                  {/* Overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                    <Button size="sm" className="bg-white/20 backdrop-blur-sm border border-white/30 text-white hover:bg-white/30">
-                      <ImageIcon className="w-4 h-4 mr-2" />
-                      View Photos
+                    {/* Overlay */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500 flex items-center justify-center">
+                      <Button size="sm" className="bg-white/20 backdrop-blur-md border border-white/40 text-white hover:bg-white/30 translate-y-4 group-hover:translate-y-0 transition-all duration-500">
+                        <ImageIcon className="w-4 h-4 mr-2" />
+                        View Photos
+                      </Button>
+                    </div>
+
+                    {/* Type Badge */}
+                    <div className="absolute top-3 right-3">
+                      <Badge variant="secondary" className="bg-white/90 text-foreground backdrop-blur-sm">
+                        <ImageIcon className="w-3 h-3 mr-1" />
+                        {album.count} Photos
+                      </Badge>
+                    </div>
+                  </div>
+
+                  <CardHeader className="pb-3">
+                    <div className="flex items-start justify-between">
+                      <CardTitle className="text-lg cursor-pointer transition-all duration-300 group-hover:bg-gradient-to-r group-hover:from-pink-bright group-hover:to-pink-deep group-hover:bg-clip-text group-hover:text-transparent" onClick={() => navigate(album.link)}>
+                        {album.title}
+                      </CardTitle>
+                    </div>
+                  </CardHeader>
+
+                  <CardContent className="pt-0">
+                    <p className="text-muted-foreground text-sm mb-4 line-clamp-2">
+                      {album.description}
+                    </p>
+
+                    <Button size="sm" className="w-full" onClick={() => navigate(album.link)}>
+                      View Album
                     </Button>
-                  </div>
-
-                  {/* Type Badge */}
-                  <div className="absolute top-3 right-3">
-                    <Badge variant="secondary" className="bg-white/90 text-foreground">
-                      <ImageIcon className="w-3 h-3 mr-1" />
-                      {album.count} Photos
-                    </Badge>
-                  </div>
-                </div>
-
-                <CardHeader className="pb-3">
-                  <div className="flex items-start justify-between">
-                    <CardTitle className="text-lg group-hover:bg-gradient-to-r from-pink-bright to-pink-deep bg-clip-text text-transparent transition-colors cursor-pointer" onClick={() => navigate(album.link)}>
-                      {album.title}
-                    </CardTitle>
-                  </div>
-                </CardHeader>
-
-                <CardContent className="pt-0">
-                  <p className="text-muted-foreground text-sm mb-4 line-clamp-2">
-                    {album.description}
-                  </p>
-
-                  <Button size="sm" className="w-full" onClick={() => navigate(album.link)}>
-                    View Album
-                  </Button>
-                </CardContent>
-              </Card>
+                  </CardContent>
+                </Card>
+              </div>
             </ScrollAnimation>
           ))}
         </div>
